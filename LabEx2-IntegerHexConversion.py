@@ -1,7 +1,7 @@
-# INTEGER TO HEXADECIMAL
-
 holding_string = "0123456789ABCDEF"
 
+# INTEGER TO HEXADECIMAL
+# Does not assume valid input
 testA = 1
 while testA:
     try:
