@@ -1,0 +1,32 @@
+Gettysburg Address
+
+This is an exercise in file analysis. Fundamentally it is an exercise in the use of the basic collection objects in
+Python such as strings, lists, tuples, dictionaries and sets.
+
+We are going to use Abraham Lincoln's Gettysburg address of 1863, This is famous for many things, including for being a
+short speech.
+
+TASKS
+
+We are going to do some simple analysis on this.
+1. Count the number of words in the speech. We will exclude from our analysis a number of 'stop words', in our example
+these will be the definite and indefinite articles and some personal pronouns.
+2. Count the unique words in the collection produced by 1 above.
+3. Count the number of occurrences of each word.
+
+Some hints
+1. Import the string module. This gives string.whitespace, a string containing all of the whitespace characters
+and string.punctuation, a string containing all of the punctuation characters.
+
+2. Import the requests module. 
+
+3. Sample code for resource retrieval
+
+import requests
+response = requests.get("http://example.org/")
+headers = response.headers
+body = response.content
+
+Data
+
+The files are on http://193.1.33.31:88/pa1/gettysburg.txt and http://193.1.33.31:88/pa1/stopwords.txt
