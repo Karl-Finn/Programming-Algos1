@@ -31,5 +31,18 @@ for word in unique_words:
         unique_words_dict[word] = 1
     else:
         unique_words_dict[word] += 1
+
+# 6. OUTPUT THE TOTAL AMOUNT OF UNIQUE WORDS AND HOW MANY TIMES EACH WORD OCCURS IN SPEECH
+print("----------------------------------------------------------------")
+print(f"There are {len(unique_words_dict)} unique words in the speech.")
+print("----------------------------------------------------------------")
+print(f"Each word and how many times it appears in the speech:\n")
+# 6.1. PRINT ROWS OF 10 key-value pairs INSTEAD OF ONE LONG COLUMN
+count = 1
 for k, v in unique_words_dict.items():
-    print(f"'{k}': {v}")
+    if count < 10: # will print 9 key-value pairs in a row
+        print(f"'{k}': {v}", end='    ')
+        count += 1
+    else: # on the 10th key-value pair 'count' be re-initialized to 1
+        count = 1
+        print(f"{k}: {v}") # and we print the 10th key-value pair for that row
