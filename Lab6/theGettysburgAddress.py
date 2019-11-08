@@ -22,7 +22,7 @@ stopwords = stopwords_retrieve.text
 stopwords_list = stopwords.split(sep=",")
 
 # 4. CREATE A LIST OF WORDS FROM THE SPEECH THAT DOES NOT INCLUDE ANY OF THE STOP-WORDS
-unique_words = [word for word in speech_word_list if word not in stopwords_list]
+unique_words = [word for word in speech_word_list if word not in stopwords_list] # list comprehension
 
 # 5. CREATE A DICTIONARY THAT COUNTS HOW MANY TIMES A UNIQUE WORD APPEARS IN THE SPEECH
 unique_words_dict = dict()
