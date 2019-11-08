@@ -1,44 +1,18 @@
-"""This is GettysburgAddress.py refactored to take advantage of functions"""
-
-def format_txt_file_as_list(file):
-    """Takes a text file as input and returns a list
-        of each word from the file (Duplicates are allowed)
-        Note: hyphened words will NOT be treated as distinct words.
-        The hyphen will be removed and the words will be taken seperately.
-        """
-    file_formatted = file.lower()\
-        .replace(",", "")\
-        .replace("-", " ")\
-        .replace(".", "")\
-        .replace("\n\n", " ")
-    word_list = file_formatted.split()
-    return word_list
-
-def get_text_file_from_net(text_url):
-    """Takes a URL of a text file that is on the web as
-        a string and returns the text file as a string
-        using the Request Library."""
-    try:
-        import requests
-        retrieve = requests.get(text_url)
-        text_file_str = retrieve.text
-        return text_file_str
-    except Exception as err:
-        print(f"Error occurred: {err}")
+import self_functions
 
 # 1. Get the files from the net
 speech_url = "http://193.1.33.31:88/pa1/gettysburg.txt"
-body = get_text_file_from_net(speech_url)
+body = self_functions.get_text_file_from_net(speech_url)
 
 stopwords_url = "http://193.1.33.31:88/pa1/stopwords.txt"
-stopwords = get_text_file_from_net(stopwords_url)
+stopwords = self_functions.get_text_file_from_net(stopwords_url)
 
 # 2. Make a list of the words of each file
-speech_word_list = format_txt_file_as_list(body)
+speech_word_list = self_functions.format_txt_file_as_list(body)
 stopwords_list = stopwords.split(sep=",")
 
 # 3. Create a list of UNIQUE words I.E. words in the speech that are not in stopwords_list.
-unique_words = [word for word in speech_word_list if word not in stopwords_list] # list comprehension
+unique_words = self_functions.uniqueWordsList(speech_word_list, stopwords_list)
 
 # 4. Create a dictionary that counts the unique words.
 unique_words_dict = dict()
