@@ -34,3 +34,18 @@ def uniqueWordsList(checkList, excludeList):
     """
     unique = [word for word in checkList if word not in excludeList]
     return unique
+
+
+def wordHist(wordList):
+    """
+
+    :param wordList: a list of words
+    :return: a dictionary histogram of each word and how many times it appears in wordList
+    """
+    hist = dict()
+    for word in wordList:
+        if word not in hist:
+            hist[word] = 1
+        else:
+            hist[word] += 1
+    return hist
