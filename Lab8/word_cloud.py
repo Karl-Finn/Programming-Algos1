@@ -1,6 +1,6 @@
 """An add-on to the Gettysburg exercise: Create a word cloud of the unique words"""
 
-import my_functions as mf
+import self_functions as mf
 
 speech_url = "http://193.1.33.31:88/pa1/gettysburg.txt"
 speech_body = mf.get_text_file_from_net(speech_url)
