@@ -1,7 +1,9 @@
 """
 DT249: Programming & Algorithms 1, Assignment
-
 By: Karl Finnerty
+
+NTS: This algorithm uses dictionaries to provide the correct answer and is a 
+     better solution than the other one that uses only list and conditionals.
 """
 
 
