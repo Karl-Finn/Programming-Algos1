@@ -40,22 +40,22 @@ def average_price(a_list):
             volume of shares traded on that date
     :return: a dictionary of the average price for each date
     """
-    apy_dict = {}
+    avg_p_dict = {}
     for i in a_list:
         f_date = i[0]
         close = i[1]
         volume = i[2]
-        if f_date not in apy_dict:
+        if f_date not in avg_p_dict:
             run_vol = volume
             run_close_by_vol = close * volume
             avg_price = run_close_by_vol / run_vol
-            apy_dict[f_date] = avg_price
+            avg_p_dict[f_date] = avg_price
         else:
             run_vol += volume
             run_close_by_vol += close * volume
             avg_price = run_close_by_vol / run_vol
-            apy_dict[f_date] = avg_price
-    return apy_dict
+            avg_p_dict[f_date] = avg_price
+    return avg_p_dict
 
 
 def dict_to_list(a_dict):
